@@ -19,30 +19,30 @@ def list_of_options
   puts '10 - Add a movie'
   puts '0 - exit'
   print 'Please choose an option to proceed: '
-  end
+end
 
-  def exit_message
-    puts 'thank you for using our app'
-    puts 'created by Hans Zizold'
-    puts 'created by Brenda Wihogora'
-  end
+def exit_message
+  puts 'thank you for using our app'
+  puts 'created by Hans Zizold'
+  puts 'created by Brenda Wihogora'
+end
 
-  def main
-    app = App.new
-    loop do
-  list_of_options
-      option = gets.chomp.to_i
-      if option > 10 && option < 0
-        print 'Invalid option. Press Enter to retry... '
-        gets.chomp
-        system('clear')
-        next
-      elsif option == 0
-        exit_message
-        break
-      else
-        app.run(option)
-      end
+def main
+  app = App.new
+  loop do
+    list_of_options
+    option = gets.chomp.to_i
+    if option > 10 && option < 0
+      print 'Invalid option. Press Enter to retry... '
+      gets.chomp
+      system('clear')
+      next
+    elsif option.zero
+      exit_message
+      break
+    else
+      app.run(option)
+    end
   end
 end
 main
