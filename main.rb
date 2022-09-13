@@ -17,7 +17,7 @@ def list_of_options
   puts '8 - Add a book'
   puts '9 - Add a music album'
   puts '10 - Add a movie'
-  puts '00 - exit'
+  puts '11 - exit'
   print 'Please choose an option to proceed: '
 end
 
@@ -37,7 +37,7 @@ def main
       gets.chomp
       system('clear')
       next
-    elsif option == 00
+    elsif option == 11
       exit_message
       break
     else
