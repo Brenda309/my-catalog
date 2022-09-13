@@ -24,11 +24,6 @@ class Item
     @archived = true if can_be_archived? == true
     false
   end
-
-  def label=(label)
-    @label = label
-    label.items.push(self) unless label.items.include?(self)
-  end
 end
 
 # testItem = Item.new('2010/10/20')
