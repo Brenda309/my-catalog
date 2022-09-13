@@ -1,5 +1,4 @@
 require 'Date'
-
 class Item
   attr_reader :label
 
