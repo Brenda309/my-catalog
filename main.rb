@@ -17,7 +17,7 @@ def list_of_options
   puts '8 - Add a book'
   puts '9 - Add a music album'
   puts '10 - Add a movie'
-  puts '0 - exit'
+  puts '00 - exit'
   print 'Please choose an option to proceed: '
 end
 
@@ -32,12 +32,12 @@ def main
   loop do
     list_of_options
     option = gets.chomp.to_i
-    if option > 10 && option < 0
+    if option > 10 && option < 1
       print 'Invalid option. Press Enter to retry... '
       gets.chomp
       system('clear')
       next
-    elsif option.zero
+    elsif option == 00
       exit_message
       break
     else

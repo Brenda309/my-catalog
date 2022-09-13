@@ -1,6 +1,7 @@
 class App
   attr_reader :label
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def run(option)
     case option
     when 1 then list_books
@@ -15,4 +16,5 @@ class App
     else puts 'invalid option'
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
