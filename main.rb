@@ -1,6 +1,5 @@
 require './lib/item'
 
-
 def list_of_options
   puts 'Please choose an option by entering a number:'
   puts '============================================='
