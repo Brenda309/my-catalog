@@ -1,6 +1,8 @@
 require './lib/item'
 require './lib/genre'
+require './lib/author'
 require './lib/musicalbum'
+require './lib/game'
 
 # system('cls')
 # item1 = Item.new('Rock', 'Bon Jovi', 'Deezer', 'Sony', '2015/12/25')
@@ -27,10 +29,28 @@ require './lib/musicalbum'
 # p genre1.items.count
 # p genre1.items.last.publish_date
 
-album1 = MusicAlbum.new('Alternative', 'Beck', 'Youtube', 'EMI', '18-05-2018')
-p album1.genre
-p album1.on_spotify
+# album1 = MusicAlbum.new('Alternative', 'Beck', 'Youtube', 'EMI', '18-05-2018')
+# p album1.genre
+# p album1.on_spotify
 # genre2 = Genre.new('Alternative')
 # p genre2.items.count
 # genre2.add_item(album1)
 # p genre2.items.count
+
+print 'Author first name: '
+author_first_name = gets.chomp
+print 'Author last name: '
+author_last_name = gets.chomp
+author = "#{author_first_name} #{author_last_name}"
+game1 = Game.new('Arcade', author, 'Nintendo', 'NA', '18-05-2015', '10-09-2022')
+p game1.genre
+p game1.author
+p game1.source
+p game1.label
+p game1.publish_date
+p game1.multiplayer
+p game1.last_played_at
+
+# author1 = Author.new('John', 'Doe')
+# p author1.first_name
+# p author1.last_name
