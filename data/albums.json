@@ -1,0 +1,26 @@
+[
+  {
+    "genre" : "Alternative",
+    "author" : "Beck",
+    "source" : "Youtube",
+    "label" : "EMI",
+    "publish_date" : "2020-12-12",
+    "on_spotify" : false
+  },
+  {
+    "genre" : "Pop",
+    "author" : "Madonna",
+    "source" : "Spotify",
+    "label" : "Crystal",
+    "publish_date" : "1990-11-11",
+    "on_spotify" : false
+  },
+  {
+    "genre" : "Pop",
+    "author" : "Michael Jackson",
+    "source" : "NA",
+    "label" : "Capitol",
+    "publish_date" : "1983-01-16",
+    "on_spotify" : false
+  }
+]
