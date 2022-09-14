@@ -1,13 +1,15 @@
 require_relative 'item'
 
 class MusicAlbum < Item
-  def initialize(genre, author, source, label, publish_date, on_spotify)
+  attr_accessor :on_spotify
+
+  def initialize(genre, author, source, label, publish_date, on_spotify: false)
     super(genre, author, source, label, publish_date)
     @on_spotify = on_spotify
   end
 
   def can_be_archived?
-    return true if super && @on_spotify == true
+    return true if super && @on_spotify
 
     false
   end
