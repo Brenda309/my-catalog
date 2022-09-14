@@ -22,6 +22,11 @@ class Item
     author.add_item(self) unless author.items.include?(self)
   end
 
+  def author=(label)
+    @label = label
+    label.add_item(self) unless label.items.include?(self)
+  end
+
   def can_be_archived?
     (Date.today << 120 <=> @publish_date).positive?
   end

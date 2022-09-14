@@ -10,18 +10,7 @@ class Label
   end
 
   def add_item(item)
-    @items << item unless @items.include?(item)
-    item.label = self unless item.class != String
-  end
-
-  def to_json(*args)
-    {
-      JSON.create_id => self.class.name,
-      'data' => [title, color, id]
-    }.to_json(*args)
-  end
-
-  def self.json_create(object)
-    new(*object['data'])
+    @items.push(item)
+    item.label = self
   end
 end

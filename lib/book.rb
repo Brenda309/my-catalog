@@ -18,7 +18,7 @@ class Book < Item
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'data' => [publish_date, publisher, cover_state, id]
+      'data' => [publish_date, publisher, cover_state]
     }.to_json(*args)
   end
 
