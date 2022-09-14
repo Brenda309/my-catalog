@@ -25,7 +25,7 @@ class App
     source = gets.chomp
     print 'Label (NA if it does not apply): '
     label = gets.chomp
-    print 'Publish Date (DD-MM-YYYY): '
+    print 'Publish Date (YYYY-MM-DD): '
     publish_date = gets.chomp
     @music_albums << MusicAlbum.new(genre, author, source, label, publish_date)
     update(genre, author_first_name, author_last_name)
@@ -45,9 +45,9 @@ class App
     source = gets.chomp
     print 'Label (NA if it does not apply): '
     label = gets.chomp
-    print 'Publish Date (DD-MM-YYYY): '
+    print 'Publish Date (YYYY-MM-DD): '
     publish_date = gets.chomp
-    print 'Last Played at (DD-MM-YYYY): '
+    print 'Last Played at (YYYY-MM-DD): '
     last_played_at = gets.chomp
     @games << Game.new(genre, author, source, label, publish_date, last_played_at)
     update(genre, author_first_name, author_last_name)

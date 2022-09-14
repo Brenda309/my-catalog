@@ -5,9 +5,10 @@ require './lib/musicalbum'
 require './lib/game'
 
 # system('cls')
-# item1 = Item.new('Rock', 'Bon Jovi', 'Deezer', 'Sony', '2015/12/25')
-# item2 = Item.new('Pop', 'Madonna', 'Spotify', 'EMI', '20-10-2010')
+# item1 = Item.new('Rock', 'Bon Jovi', 'Deezer', 'Sony', '2005-12-25')
 # p item1.can_be_archived?
+
+# item2 = Item.new('Pop', 'Madonna', 'Spotify', 'EMI', '20-10-2010')
 # p item2.can_be_archived?
 # p item1.genre
 # p item2.author
@@ -37,19 +38,21 @@ require './lib/game'
 # genre2.add_item(album1)
 # p genre2.items.count
 
-print 'Author first name: '
-author_first_name = gets.chomp
-print 'Author last name: '
-author_last_name = gets.chomp
-author = "#{author_first_name} #{author_last_name}"
-game1 = Game.new('Arcade', author, 'Nintendo', 'NA', '18-05-2015', '10-09-2022')
-p game1.genre
-p game1.author
-p game1.source
-p game1.label
+# print 'Author first name: '
+# author_first_name = gets.chomp
+# print 'Author last name: '
+# author_last_name = gets.chomp
+# author = "#{author_first_name} #{author_last_name}"
+game1 = Game.new('Arcade', 'John Doe', 'Nintendo', 'NA', '2005-05-18', '2012-09-10')
 p game1.publish_date
-p game1.multiplayer
 p game1.last_played_at
+p game1.can_be_archived?
+
+
+# p game1.genre
+# p game1.author
+# p game1.source
+# p game1.label
 
 # author1 = Author.new('John', 'Doe')
 # p author1.first_name
