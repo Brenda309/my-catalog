@@ -1,0 +1,18 @@
+[
+  {
+    "genre" : "Rock",
+    "author" : "Mick Jagger",
+    "source" : "Youtube",
+    "label" : "Polydor",
+    "publish_date" : "1980-12-10",
+    "on_spotify" : false
+  },
+  {
+    "genre" : "Pop",
+    "author" : "Mick Jagger",
+    "source" : "Spotify",
+    "label" : "EMI",
+    "publish_date" : "1995-05-05",
+    "on_spotify" : false
+  }
+]

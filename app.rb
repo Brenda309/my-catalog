@@ -72,7 +72,7 @@ class App
 
   def list_games
     puts "\n"
-    puts '       List of Games'
+    puts '      List of Games'
     puts 'There is not games yet' if @games.length.zero?
     @games.each_with_index do |game, index|
       puts "
@@ -268,7 +268,7 @@ class App
     actual_authors = []
     actual_genres = []
     author = "#{author_first_name} #{author_last_name}"
-    @authors.each { |aut| actual_authors.push(aut.name) }
+    @authors.each { |aut| actual_authors.push("#{aut.first_name} #{aut.last_name}") }
     @authors << Author.new(author_first_name, author_last_name) unless actual_authors.index(author)
     @genres.each { |gen| actual_genres.push(gen.name) }
     @genres << Genre.new(genre) unless actual_genres.index(genre)

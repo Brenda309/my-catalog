@@ -1,0 +1,20 @@
+[
+  {
+    "genre" : "Arcade",
+    "author" : "John Doe",
+    "source" : "Nintendo",
+    "label" : "NA",
+    "publish_date" : "2000-12-12",
+    "last_played_at" : "2022-09-10",
+    "multiplayer" : true
+  },
+  {
+    "genre" : "Arcade",
+    "author" : "Gaby Zizold",
+    "source" : "NA",
+    "label" : "NA",
+    "publish_date" : "2022-09-10",
+    "last_played_at" : "2022-09-14",
+    "multiplayer" : true
+  }
+]
