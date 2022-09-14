@@ -23,6 +23,9 @@ class Item
     @archived = true if can_be_archived? == true
     false
   end
+   def add_label
+    @label = label
+  end
 end
 
 # testItem = Item.new('2010/10/20')
