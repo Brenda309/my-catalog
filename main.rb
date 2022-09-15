@@ -15,11 +15,10 @@ def list_of_options
   puts '4 - List all labels'
   puts '5 - List all genres'
   puts '6 - List all authors'
-  puts '7 - List all sources'
-  puts '8 - Add a book'
-  puts '9 - Add a Music Album'
-  puts '10 - Add a movie'
-  puts '11 - exit'
+  puts '7 - Add a book'
+  puts '8 - Add a music album'
+  puts '9 - Add a game'
+  puts '0 - exit'
   print 'Please choose an option to proceed: '
 end
 
@@ -28,14 +27,13 @@ def options(app, option)
   case option
   when 1 then app.books_list
   when 2 then app.list_music_albums
-  when 3 then list_movies
-  when 4 then app.list_genres
-  when 5 then app.list_labels
-  when 6 then list_authors
-  when 7 then list_sources
-  when 8 then app.add_books_list
-  when 9 then app.add_music_album
-  when 10 then add_movie
+  when 3 then app.list_games
+  when 4 then app.list_labels
+  when 5 then app.list_genres
+  when 6 then app.list_authors
+  when 7 then app.add_books_list
+  when 8 then app.add_music_album
+  when 9 then app.add_game
   end
 end
 # rubocop:enable Metrics/CyclomaticComplexity
@@ -46,35 +44,43 @@ def exit_message
   puts 'created by Brenda Wihogora'
 end
 
-def main
-  system('cls')
-  app = App.new
+def load_data(app)
   app.load_list_books
   app.load_labels
   app.load_music_albums
   app.load_genres
   app.load_games
   app.load_authors
-  loop do
-    list_of_options
-    option = gets.to_i
-    if option > 11 || option < 1
-      print 'Invalid option. Press Enter to retry... '
-      gets.chomp
-      next
-    elsif option == 11
-      exit_message
-      break
-    else
-      options(app, option)
-    end
-  end
+end
+
+def save_data(app)
   app.save_book
   app.save_labels
   app.save_music_albums
   app.save_genres
   app.save_games
   app.save_authors
+end
+
+def main
+  system('cls')
+  app = App.new
+  load_data(app)
+  loop do
+    list_of_options
+    option = gets.to_i
+    if !option.between?(0, 9)
+      print 'Invalid option. Press Enter to retry... '
+      gets.chomp
+      next
+    elsif option.zero?
+      exit_message
+      break
+    else
+      options(app, option)
+    end
+  end
+  save_data(app)
 end
 
 main
