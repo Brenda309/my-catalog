@@ -10,7 +10,7 @@ require 'json'
 # rubocop:disable Metrics/ClassLength:
 class App
   attr_reader :label
-     
+
   def initialize
     @music_albums = []
     @genres = []
@@ -44,6 +44,7 @@ class App
     label_color = gets.chomp
     @books << Book.new(genre, author, source, label, publish_date, publisher, cover_state)
     update(label_title, label_color)
+  end
 
   def add_music_album
     print 'Genre: '
@@ -89,13 +90,6 @@ class App
     puts "\n"
   end
 
-  def update(label_title, label_color)
-    actual_label = []
-    label = "#{label_title}#{label_color}"
-    @label.each { |lab| actual_label.push(lab.name) }
-    @label << Label.new(label_title, label_color) unless actual_label.index(label)
-  end
-
   def save_book
     books_hash = []
     @books.each do |list|
@@ -108,6 +102,8 @@ class App
                         cover_state: list.cover_state })
     end
     File.new('./data/books.json', 'w') unless File.exist?('./data/books.json')
+  end
+
   def add_game
     print 'Genre: '
     genre = gets.chomp
@@ -276,8 +272,8 @@ class App
       end
       label_file.close
     end
-    @label
     File.write('./data/games.json', JSON.generate(games_hash, opts))
+    @label
   end
 
   def save_genres
@@ -389,9 +385,13 @@ class App
 
   private
 
-  def update(genre, author_first_name, author_last_name)
+  def update(genre, author_first_name, author_last_name, label_title, label_color)
     actual_authors = []
     actual_genres = []
+    actual_label = []
+    label = "#{label_title}#{label_color}"
+    @label.each { |lab| actual_label.push(lab.name) }
+    @label << Label.new(label_title, label_color) unless actual_label.index(label)
     author = "#{author_first_name} #{author_last_name}"
     @authors.each { |aut| actual_authors.push("#{aut.first_name} #{aut.last_name}") }
     @authors << Author.new(author_first_name, author_last_name) unless actual_authors.index(author)
