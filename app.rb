@@ -134,4 +134,28 @@ private
     end
     @books
   end
+    def load_labels
+    actual_genres = []
+    unless File.zero?('./data/label.json')
+      labels_file = File.open('./data/label.json')
+      labels_hash = JSON.parse(labels_file.read)
+    end
+    unless labels_hash.empty?
+      labels_hash.each do |lab|
+        @label << Label.new(
+          lab['genre'],
+          lab['author'],
+          lab['source'],
+          lab['label'],
+          lab['publish_date'],
+          lab['label_title'],
+          lab['label_color']
+        )
+        @genres.each { |gen| actual_genres.push(gen.name) }
+        @genres << Genre.new(album['genre']) unless actual_genres.index(list['genre'])
+      end
+      label_file.close
+    end
+    @label
+  end
 end
