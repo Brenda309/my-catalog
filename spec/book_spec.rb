@@ -10,16 +10,20 @@ describe Book do
       expect(@book).to be_instance_of Book
     end
 
-    it "The album1's genre should be Alternative" do
+    it "The book's label should be unknown" do
       expect(@book.label).to eq('unknown')
     end
 
-    it "The album1's author should be Beck" do
+    it "The books's author should be Brenda" do
       expect(@book.author).to eq('Brenda')
     end
 
-    it 'The method can_be_archived? should be available for the instance @album1' do
+    it 'The method can_be_archived? should be available for the instance @book' do
       expect(@book).to respond_to(:can_be_archived?)
+    end
+
+     it 'the date should be' do
+      expect(@book.publish_date).to eq('09-09-2001')
     end
   end
 end
