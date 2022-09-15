@@ -5,16 +5,11 @@
 This In this project, we will create a console app that will help you to keep a record of different types of things we own: books, music albums and movies.
 
 ## Video link
-
+[video demo link](https://drive.google.com/file/d/1izMY_oCgaCTZqED5txGQDcYsRDM7QCxg/view?usp=sharing)
 ## Built With
 
 - Ruby
 - RSpec
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
@@ -31,7 +26,7 @@ RSpec 3.11.0
      bundle install
 
      gem install rspec
-### Usage
+
 
 ### Run tests
       rspec spec
