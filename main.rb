@@ -11,9 +11,9 @@ def list_of_options
   puts ''
   puts '1 - List all books'
   puts '2 - List all music albums'
-  puts '3 - List all movies'
-  puts '4 - List all genres'
-  puts '5 - List all label'
+  puts '3 - List all games'
+  puts '4 - List all labels'
+  puts '5 - List all genres'
   puts '6 - List all authors'
   puts '7 - List all sources'
   puts '8 - Add a book'
@@ -51,6 +51,10 @@ def main
   app = App.new
   app.load_list_books
   app.load_labels
+  app.load_music_albums
+  app.load_genres
+  app.load_games
+  app.load_authors
   loop do
     list_of_options
     option = gets.to_i
@@ -67,6 +71,10 @@ def main
   end
   app.save_book
   app.save_labels
+  app.save_music_albums
+  app.save_genres
+  app.save_games
+  app.save_authors
 end
 
 main
