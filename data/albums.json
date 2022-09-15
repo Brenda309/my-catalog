@@ -1,26 +1,18 @@
 [
   {
-    "genre" : "Alternative",
-    "author" : "Beck",
+    "genre" : "Rock",
+    "author" : "Mick Jagger",
     "source" : "Youtube",
-    "label" : "EMI",
-    "publish_date" : "2020-12-12",
+    "label" : "Polydor",
+    "publish_date" : "1980-12-10",
     "on_spotify" : false
   },
   {
     "genre" : "Pop",
-    "author" : "Madonna",
+    "author" : "Mick Jagger",
     "source" : "Spotify",
-    "label" : "Crystal",
-    "publish_date" : "1990-11-11",
-    "on_spotify" : false
-  },
-  {
-    "genre" : "Pop",
-    "author" : "Michael Jackson",
-    "source" : "NA",
-    "label" : "Capitol",
-    "publish_date" : "1983-01-16",
+    "label" : "EMI",
+    "publish_date" : "1995-05-05",
     "on_spotify" : false
   }
 ]

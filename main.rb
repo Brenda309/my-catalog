@@ -50,6 +50,9 @@ def main
   system('cls')
   app = App.new
   app.load_music_albums
+  app.load_genres
+  app.load_games
+  app.load_authors
   loop do
     list_of_options
     option = gets.to_i
@@ -65,6 +68,9 @@ def main
     end
   end
   app.save_music_albums
+  app.save_genres
+  app.save_games
+  app.save_authors
 end
 
 main
