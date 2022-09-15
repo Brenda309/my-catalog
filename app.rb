@@ -110,5 +110,28 @@ private
     }
     File.write('./data/label.json', JSON.generate(labels_hash, opts))
   end
-
+ def load_list_books
+    actual_genres = []
+    unless File.zero?('./data/books.json')
+      books_file = File.open('./data/books.json')
+      books_hash = JSON.parse(books_file.read)
+    end
+    unless books_hash.empty?
+      books_hash.each do |list|
+        @books << Book.new(
+          list['genre'],
+          list['author'],
+          list['source'],
+          list['label'],
+          list['publish_date'],
+          list['publisher'],
+          list['cover_state']
+        )
+        @genres.each { |gen| actual_genres.push(gen.name) }
+        @genres << Genre.new(list['genre']) unless actual_genres.index(list['genre'])
+      end
+      books_file.close
+    end
+    @books
+  end
 end
