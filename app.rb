@@ -89,4 +89,26 @@ private
     File.write('./data/books.json', JSON.generate(books_hash, opts))
   end
 
+  def save_labels
+    labels_hash = []
+    @label.each do |lab|
+      labels_hash.push({ genre: lab.genre,
+                        author: lab.author,
+                        source: lab.source,
+                        label: lab.label,
+                        publish_date: lab.publish_date,
+                        label_title: lab.label_title,
+                       label_color: lab.label_color })
+    end
+    File.new('./data/label.json', 'w') unless File.exist?('./data/label.json')
+    opts = {
+      array_nl: "\n",
+      object_nl: "\n",
+      indent: '  ',
+      space_before: ' ',
+      space: ' '
+    }
+    File.write('./data/label.json', JSON.generate(labels_hash, opts))
+  end
+
 end
