@@ -1,6 +1,6 @@
 class Item
-  attr_reader :genre, :author
-  attr_accessor :source, :label, :publish_date
+  attr_reader :genre, :author, :label
+  attr_accessor :source, :publish_date
 
   def initialize(genre, author, source, label, publish_date)
     @id = rand(1..1000)
@@ -17,15 +17,18 @@ class Item
     genre.add_item(self) unless genre.items.include?(self)
   end
 
+  def can_be_archived?
+    return true if Time.now.year - @publish_date[0..3].to_i > 10
+  end
+
   def author=(author)
     @author = author
     author.add_item(self) unless author.items.include?(self)
   end
 
-  def can_be_archived?
-    return true if Time.now.year - @publish_date[0..3].to_i > 10
-
-    false
+  def label=(label)
+    @label = label
+    label.add_item(self) unless label.items.include?(self)
   end
 
   def move_to_archive

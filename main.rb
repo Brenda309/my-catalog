@@ -18,7 +18,7 @@ def list_of_options
   puts '7 - List all sources'
   puts '8 - Add a book'
   puts '9 - Add a Music Album'
-  puts '10 - Add a Game'
+  puts '10 - Add a movie'
   puts '11 - exit'
   print 'Please choose an option to proceed: '
 end
@@ -26,16 +26,16 @@ end
 # rubocop:disable Metrics/CyclomaticComplexity
 def options(app, option)
   case option
-  when 1 then list_books
+  when 1 then app.books_list
   when 2 then app.list_music_albums
-  when 3 then app.list_games
-  when 4 then list_labels
-  when 5 then app.list_genres
-  when 6 then app.list_authors
+  when 3 then list_movies
+  when 4 then app.list_genres
+  when 5 then app.list_labels
+  when 6 then list_authors
   when 7 then list_sources
-  when 8 then add_book
+  when 8 then app.add_books_list
   when 9 then app.add_music_album
-  when 10 then app.add_game
+  when 10 then add_movie
   end
 end
 # rubocop:enable Metrics/CyclomaticComplexity
@@ -49,6 +49,8 @@ end
 def main
   system('cls')
   app = App.new
+  app.load_list_books
+  app.load_labels
   app.load_music_albums
   app.load_genres
   app.load_games
@@ -67,6 +69,8 @@ def main
       options(app, option)
     end
   end
+  app.save_book
+  app.save_labels
   app.save_music_albums
   app.save_genres
   app.save_games
