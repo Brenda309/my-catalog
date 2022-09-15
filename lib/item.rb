@@ -37,6 +37,5 @@ class Item
     @archived = true if can_be_archived? == true
 
     @archived
-
   end
 end
