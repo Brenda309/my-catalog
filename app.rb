@@ -1,15 +1,17 @@
 require 'date'
 require './lib/book'
 require './lib/label'
+require 'json'
 class App
   attr_reader :label
+
   def initialize
     @books = []
     @label = []
   end
 
   def add_books_list
-  puts 'Genre: '
+    puts 'Genre: '
     genre = gets.chomp
     puts 'Author first name: '
     author_first_name = gets.chomp
@@ -35,11 +37,12 @@ class App
     puts 'Music Album created successfully!'
     puts "\n"
   end
+
   def books_list
     puts "\n"
     puts '       List of books'
     puts 'There is not list of books yet' if @books.length.zero?
-   @books.each_with_index do |list, index|
+    @books.each_with_index do |list, index|
       puts "
       #{index + 1}) Genre: #{list.genre}, Author: #{list.author}
       Source: #{list.source}, Label: #{list.label}
@@ -48,7 +51,7 @@ class App
     puts "\n"
   end
 
-   def list_labels
+  def list_labels
     puts "\n"
     puts '      List of Label'
     puts "\n"
@@ -58,25 +61,24 @@ class App
     end
     puts "\n"
   end
-private
-    def update(label_title, label_color)
+
+  def update(label_title, label_color)
     actual_label = []
     label = "#{label_title}#{label_color}"
     @label.each { |lab| actual_label.push(lab.name) }
     @label << Label.new(label_title, label_color) unless actual_label.index(label)
   end
 
-
   def save_book
     books_hash = []
     @books.each do |list|
-     books_hash.push({ genre: list.genre,
-                         author: list.author,
-                         source: list.source,
-                         label: list.label,
-                         publish_date: list.publish_date,
+      books_hash.push({ genre: list.genre,
+                        author: list.author,
+                        source: list.source,
+                        label: list.label,
+                        publish_date: list.publish_date,
                         publisher: list.publisher,
-                        cover_state: list.cover_state})
+                        cover_state: list.cover_state })
     end
     File.new('./data/books.json', 'w') unless File.exist?('./data/books.json')
     opts = {
@@ -92,13 +94,8 @@ private
   def save_labels
     labels_hash = []
     @label.each do |lab|
-      labels_hash.push({ genre: lab.genre,
-                        author: lab.author,
-                        source: lab.source,
-                        label: lab.label,
-                        publish_date: lab.publish_date,
-                        label_title: lab.label_title,
-                       label_color: lab.label_color })
+      labels_hash.push({ label_title: lab.title,
+                         label_color: lab.color })
     end
     File.new('./data/label.json', 'w') unless File.exist?('./data/label.json')
     opts = {
@@ -110,9 +107,9 @@ private
     }
     File.write('./data/label.json', JSON.generate(labels_hash, opts))
   end
- def load_list_books
-    actual_genres = []
-    unless File.zero?('./data/books.json')
+
+  def load_list_books
+    if File.exist?('./data/books.json')
       books_file = File.open('./data/books.json')
       books_hash = JSON.parse(books_file.read)
     end
@@ -127,32 +124,23 @@ private
           list['publisher'],
           list['cover_state']
         )
-        @genres.each { |gen| actual_genres.push(gen.name) }
-        @genres << Genre.new(list['genre']) unless actual_genres.index(list['genre'])
       end
       books_file.close
     end
     @books
   end
-    def load_labels
-    actual_genres = []
-    unless File.zero?('./data/label.json')
-      labels_file = File.open('./data/label.json')
-      labels_hash = JSON.parse(labels_file.read)
+
+  def load_labels
+    if File.exist?('./data/label.json')
+      label_file = File.open('./data/label.json')
+      labels_hash = JSON.parse(label_file.read)
     end
     unless labels_hash.empty?
       labels_hash.each do |lab|
         @label << Label.new(
-          lab['genre'],
-          lab['author'],
-          lab['source'],
-          lab['label'],
-          lab['publish_date'],
           lab['label_title'],
           lab['label_color']
         )
-        @genres.each { |gen| actual_genres.push(gen.name) }
-        @genres << Genre.new(album['genre']) unless actual_genres.index(list['genre'])
       end
       label_file.close
     end

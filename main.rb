@@ -50,6 +50,7 @@ def main
   system('cls')
   app = App.new
   app.load_list_books
+  app.load_labels
   loop do
     list_of_options
     option = gets.to_i
@@ -65,6 +66,7 @@ def main
     end
   end
   app.save_book
+  app.save_labels
 end
 
 main
