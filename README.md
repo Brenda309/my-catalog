@@ -1,56 +1,49 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Catalog of my Things
 
-> Description the project.
+This In this project, we will create a console app that will help you to keep a record of different types of things we own: books, music albums and movies.
 
-
+## Video link
+[video demo link](https://drive.google.com/file/d/1izMY_oCgaCTZqED5txGQDcYsRDM7QCxg/view?usp=sharing)
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
+- RSpec
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
 
+### Prerequisites
+Ruby 3.1.2 or higher
+RSpec 3.11.0
 ### Setup
+    cd  git clone git@github.com:Brenda309/my-catalog.git
+    cd my-catalog/
 
 ### Install
+     bundle install
 
-### Usage
+     gem install rspec
+
 
 ### Run tests
-
-### Deployment
-
-
+      rspec spec
 
 ## Authors
 
-👤 **Author1**
+👤 **Brenda Wihogora**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Brenda309](https://github.com/Brenda309)
+- Twitter: [@BrendaWihogora](https://twitter.com/BrendaWihogora)
+- LinkedIn: [BrendaWihogora](https://linkedin.com/in/BrendaWihogora/)
 
-👤 **Author2**
+👤 **Hans Zizold**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+ - GitHub:[@githubhandle](https://github.com/HansZizold) 
+- Twitter:[@twitterhandle](https://twitter.com/hanzio27) 
+- LinkedIn:[LinkedIn](https://www.linkedin.com/in/hans-paul-zizold-37129037/) 
 
 ## 🤝 Contributing
 
@@ -70,6 +63,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./LICENSE.md) licensed.
 
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._

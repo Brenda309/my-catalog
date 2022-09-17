@@ -1,0 +1,11 @@
+[
+  {
+    "genre" : "Arcade",
+    "author" : "John Doe",
+    "source" : "NA",
+    "label" : "Zelda - Yellow",
+    "publish_date" : "2015-05-15",
+    "last_played_at" : "2022-09-10",
+    "multiplayer" : true
+  }
+]
